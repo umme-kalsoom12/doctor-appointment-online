@@ -27,7 +27,7 @@ COPY . .
 
 # Install PHP and JS dependencies
 RUN composer install --no-dev --optimize-autoloader --no-scripts
-RUN npm install && npm run build
+
 
 # Configure Apache
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
