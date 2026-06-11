@@ -26,7 +26,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Install PHP and JS dependencies
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 RUN npm install && npm run build
 
 # Configure Apache
